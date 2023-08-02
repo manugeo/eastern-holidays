@@ -1,9 +1,11 @@
-import Home from "./home";
+import Landing from "./_components/landing";
 
 export default function Page() {
   return (
     <main className="flex min-h-screen">
-      <Home />
+      <div className="max-w-screen-sm h-full bg-slate-900 text-slate-50">
+        <Landing />
+      </div>
     </main>
   )
 }

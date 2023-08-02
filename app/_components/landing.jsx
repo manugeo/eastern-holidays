@@ -4,12 +4,12 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 // Default theme
 import '@splidejs/react-splide/css';
 
-import BoatImage1 from '../public/boat_image_01.jpg'
-import BoatImage2 from '../public/boat_image_02.jpg'
-import BoatImage3 from '../public/boat_image_03.jpg'
-import BoatImage4 from '../public/boat_image_04.jpg'
+import BoatImage1 from '../../public/boat_image_01.jpg'
+import BoatImage2 from '../../public/boat_image_02.jpg'
+import BoatImage3 from '../../public/boat_image_03.jpg'
+import BoatImage4 from '../../public/boat_image_04.jpg'
 
-const Home = () => {
+const Landing = () => {
   const splideOptions = {
     type: 'loop'
   };
@@ -37,4 +37,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Landing;
