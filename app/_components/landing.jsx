@@ -14,8 +14,11 @@ const Landing = () => {
     type: 'loop'
   };
   return (
-    <div className='flex flex-col min-h-screen'>
-      <h1 className=''>Eastern Holidays</h1>
+    <div className='flex flex-col justify-around min-h-screen'>
+      <h1 className='mx-5 text-7xl'>
+        <span className="block max-w-sm mx-auto text-left">Eastern</span>
+        <span className="block max-w-sm mx-auto text-right">Holidays</span>
+      </h1>
 
       <Splide options={splideOptions} aria-label="House boat images.">
         <SplideSlide>
@@ -32,7 +35,9 @@ const Landing = () => {
         </SplideSlide>
       </Splide>
 
-      <h4 className=''>Cruise through the scenic backwaters of Kerala on our 3-bedroom premium houseboat.</h4>
+      <h4 className='mx-5 text-xl text-center'>
+        Cruise through the scenic backwaters of Kerala on our 3-bedroom premium houseboat.
+      </h4>
     </div>
   );
 };
