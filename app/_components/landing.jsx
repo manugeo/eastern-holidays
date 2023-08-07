@@ -22,7 +22,7 @@ const Landing = () => {
 
       <Splide options={splideOptions} aria-label="House boat images.">
         <SplideSlide>
-          <Image src={BoatImage1} alt="Boat image 01" />
+          <Image src={BoatImage1} priority={true} alt="Boat image 01" />
         </SplideSlide>
         <SplideSlide>
           <Image src={BoatImage2} alt="Boat image 02" />
