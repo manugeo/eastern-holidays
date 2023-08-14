@@ -11,7 +11,8 @@ import BoatImage4 from '../../public/boat_image_04.jpg'
 
 const Landing = () => {
   const splideOptions = {
-    type: 'loop'
+    type: 'loop',
+    arrows: false
   };
   return (
     <div className='flex flex-col justify-around min-h-screen'>
