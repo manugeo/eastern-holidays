@@ -1,4 +1,5 @@
 "use client"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,6 +9,7 @@ import {
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 // Default theme
 import '@splidejs/react-splide/css';
+import { ChevronRightCircle } from 'lucide-react'
 
 
 const Services = () => {
@@ -133,7 +135,7 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen bg-sky-950">
+    <div className="min-h-screen bg-sky-950 flex flex-col justify-around items-center">
       <h2 className="text-center text-5xl p-4">Services</h2>
 
       <Splide aria-label="Servicess offered" tag="section" options={splideOptions}>
@@ -153,7 +155,9 @@ const Services = () => {
         </SplideSlide>)}
       </Splide>
 
-      
+      <Button size="lg" className="m-4">
+        Book Now <ChevronRightCircle className="mx-2 h-4 w-4" />
+      </Button>
     </div>
   );
 };
