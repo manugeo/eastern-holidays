@@ -1,18 +1,15 @@
 "use client"
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 // Default theme
 import '@splidejs/react-splide/css';
 import { ChevronRightCircle } from 'lucide-react'
+import { useRouter } from "next/navigation";
 
 
 const Services = () => {
+  const router = useRouter();
   const SERVICES = [
     {
       name: 'Day Cruise',
@@ -155,7 +152,7 @@ const Services = () => {
         </SplideSlide>)}
       </Splide>
 
-      <Button size="lg" className="m-4">
+      <Button size="lg" className="m-4" onClick={() => router.push('/customer-details')}>
         Book Now <ChevronRightCircle className="mx-2 h-4 w-4" />
       </Button>
     </div>
