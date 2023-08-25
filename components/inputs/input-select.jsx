@@ -1,9 +1,9 @@
 import React from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-const InputSelect = ({ label = '', value, onValueChange = () => {}, placeholder = '', options = [] }) => {
+const InputSelect = ({ label = '', value, onValueChange = () => {}, placeholder = '', options = [], ...props }) => {
   return (
-    <div>
+    <div {...props}>
       {label && <p className="py-2">{label}</p>}
       <Select value={value} onValueChange={onValueChange}>
         <SelectTrigger>
