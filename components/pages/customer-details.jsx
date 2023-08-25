@@ -2,7 +2,7 @@
 
 import { SERVICES } from "@/lib/eastern-holidays";
 import { useState } from "react";
-import InputSelect from "../inputs/InputSelect";
+import InputSelect from "../inputs/input-select";
 
 const CustomerDetails = () => {
   const [serviceType, setServiceType] = useState(SERVICES[1].id);
