@@ -1,3 +1,5 @@
 import CustomerDetails from "@/components/pages/customer-details";
 
-export default () => <CustomerDetails />
+const CustomerDetailsPage = () => <CustomerDetails />;
+
+export default CustomerDetailsPage;
