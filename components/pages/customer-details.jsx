@@ -6,6 +6,7 @@ import InputSelect from "../inputs/input-select";
 import InputDate from "../inputs/input-date";
 import { add, format } from "date-fns";
 import InputText from "../inputs/input-text";
+import { Button } from "../ui/button";
 
 const CustomerDetails = () => {
   const [serviceType, setServiceType] = useState(SERVICES[1].id);
@@ -41,8 +42,8 @@ const CustomerDetails = () => {
   };
 
   return (
-    <div className="w-full max-w-screen-sm mx-auto flex flex-col justify-around min-h-screen">
-      <div className="mx-4 flex-[4_4_0%]">
+    <div className="w-full max-w-screen-sm mx-auto flex flex-col min-h-screen">
+      <div className="mx-4 mt-6 flex-[4_4_0%]">
         <InputSelect label="Type of service." value={serviceType} onValueChange={onServiceTypeChange}
           placeholder="Select the type of service that you need." options={serviceTypeOptions} />
 
@@ -58,7 +59,7 @@ const CustomerDetails = () => {
         </div>
       </div>
 
-      <div className="mx-4 mt-6 flex-[3_3_0%]">
+      <div className="mx-4 mt-6  flex-[3_3_0%]">
         <h4 className="text-4xl">Summary</h4>
 
         {serviceType && bookingDate && <p className="mt-4">
@@ -67,7 +68,7 @@ const CustomerDetails = () => {
           <span className="font-semibold">{`${format(bookingDate, 'PPPP')}.`}</span>
         </p>}
 
-        <div className="mt-3 flex justify-between">
+        <div className="mt-3 flex  justify-between">
           <p>Total</p>
           <p>₹12,000</p>
         </div>
@@ -76,6 +77,8 @@ const CustomerDetails = () => {
           <p>₹2,400</p>
         </div>
       </div>
+
+      <Button className="mx-4 mt-6 mb-6" size="lg">Book Now</Button>
     </div>
   )
 };

@@ -5,7 +5,6 @@ import { SERVICES } from "@/lib/eastern-holidays";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 // Default theme
 import '@splidejs/react-splide/css';
-import { ChevronRightCircle } from 'lucide-react'
 import { useRouter } from "next/navigation";
 
 
@@ -41,7 +40,7 @@ const Services = () => {
       </Splide>
 
       <Button size="lg" className="m-4" onClick={() => router.push('/customer-details')}>
-        Book Now <ChevronRightCircle className="mx-2 h-4 w-4" />
+        Book Now
       </Button>
     </div>
   );
