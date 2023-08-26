@@ -7,6 +7,7 @@ import InputDate from "../inputs/input-date";
 import { add, format } from "date-fns";
 import InputText from "../inputs/input-text";
 import { Button } from "../ui/button";
+import { numberWithCommas } from "@/lib/utils";
 
 const CustomerDetails = () => {
   const [serviceType, setServiceType] = useState(SERVICES[1].id);
@@ -14,7 +15,8 @@ const CustomerDetails = () => {
   const [numberOfAdults, setNumberOfAdults] = useState(4);
   const [numberOfChildrens, setNumberOfChildrens] = useState(0);
 
-  const serviceTypeOptions = SERVICES.map(({ name, id }) => ({ name, value: id }));
+  // Note: "Night Stay" not included in the options.
+  const serviceTypeOptions = SERVICES.filter(service => (service.id !== 'night-stay')).map(({ name, id }) => ({ name, value: id }));
   const onServiceTypeChange = (newServiceType) => {
     setServiceType(newServiceType);
     console.log(typeof newServiceType, newServiceType);
@@ -25,12 +27,12 @@ const CustomerDetails = () => {
   };
   const onAdultsChange = (e) => {
     const newAdults = e?.target.value;
-    setNumberOfAdults(newAdults);
+    setNumberOfAdults(parseInt(newAdults) || '');
     console.log(typeof newAdults, newAdults);
   };
   const onChildrensChange = (e) => {
     const newChildrens = e?.target.value;
-    setNumberOfChildrens(newChildrens);
+    setNumberOfChildrens(parseInt(newChildrens) || '');
     console.log(typeof newChildrens, newChildrens);
   };
 
@@ -40,6 +42,27 @@ const CustomerDetails = () => {
     before: tomorrowFns,
     after: dateAfterTwoWeeks
   };
+
+  const getTotal = () => {
+    if (!serviceType || !bookingDate || !numberOfAdults) return null;
+
+    const baseRate = 4000 * 3;
+    // Note: Base rate accounts variable for '6' adults.
+    const adultsVariableRate = (numberOfAdults - 6) * 500;
+    const childrensVariableRate = numberOfChildrens * 300;
+    const totalRate = (baseRate + adultsVariableRate + childrensVariableRate);
+    console.log({ baseRate, adultsVariableRate, childrensVariableRate, totalRate });
+
+    return totalRate;
+
+    // Todo: Calculate based on Service Type.
+    // if (serviceType === 'standard') { }
+    // else {}
+  };
+  const getPayableNow = () => {
+    if (!getTotal()) return null;
+    return Math.ceil(getTotal() * 0.2);
+  }
 
   return (
     <div className="w-full max-w-screen-sm mx-auto flex flex-col min-h-screen">
@@ -68,14 +91,15 @@ const CustomerDetails = () => {
           <span className="font-semibold">{`${format(bookingDate, 'PPPP')}.`}</span>
         </p>}
 
-        <div className="mt-3 flex  justify-between">
+        {getTotal() && <div className="mt-3 flex  justify-between">
           <p>Total</p>
-          <p>₹12,000</p>
-        </div>
-        <div className="mt-3 flex justify-between">
+          <p>{`₹${numberWithCommas(getTotal())}`}</p>
+        </div>}
+
+        {getPayableNow() && <div className="mt-3 flex justify-between">
           <p>Payable Now</p>
-          <p>₹2,400</p>
-        </div>
+          <p>{`₹${numberWithCommas(getPayableNow())}`}</p>
+        </div>}
       </div>
 
       <Button className="mx-4 mt-6 mb-6" size="lg">Book Now</Button>
