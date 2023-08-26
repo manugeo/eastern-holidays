@@ -9,9 +9,16 @@ import InputText from "../inputs/input-text";
 import { Button } from "../ui/button";
 import { numberWithCommas } from "@/lib/utils";
 
+const tomorrowFns = add(new Date(), { days: 1 });
+const dateAfterTwoWeeks = add(new Date(), { weeks: 2 })
+const disabledDates = {
+  before: tomorrowFns,
+  after: dateAfterTwoWeeks
+};
+
 const CustomerDetails = () => {
   const [serviceType, setServiceType] = useState(SERVICES[1].id);
-  const [bookingDate, setBookingDate] = useState();
+  const [bookingDate, setBookingDate] = useState(tomorrowFns);
   const [numberOfAdults, setNumberOfAdults] = useState(4);
   const [numberOfChildrens, setNumberOfChildrens] = useState(0);
 
@@ -36,13 +43,6 @@ const CustomerDetails = () => {
     console.log(typeof newChildrens, newChildrens);
   };
 
-  const tomorrowFns = add(new Date(), { days: 1 });
-  const dateAfterTwoWeeks = add(new Date(), { weeks: 2 })
-  const disabledDates = {
-    before: tomorrowFns,
-    after: dateAfterTwoWeeks
-  };
-
   const getTotal = () => {
     if (!serviceType || !bookingDate || !numberOfAdults) return null;
 
@@ -51,8 +51,6 @@ const CustomerDetails = () => {
     const adultsVariableRate = (numberOfAdults - 6) * 500;
     const childrensVariableRate = numberOfChildrens * 300;
     const totalRate = (baseRate + adultsVariableRate + childrensVariableRate);
-    console.log({ baseRate, adultsVariableRate, childrensVariableRate, totalRate });
-
     return totalRate;
 
     // Todo: Calculate based on Service Type.
@@ -71,7 +69,7 @@ const CustomerDetails = () => {
           placeholder="Select the type of service that you need." options={serviceTypeOptions} />
 
         <InputDate value={bookingDate} fromDate={tomorrowFns} toDate={dateAfterTwoWeeks} disabled={disabledDates}
-          onValueChange={onBookingDateChange} className="mt-4" label="Date of booking." />
+          required={true} onValueChange={onBookingDateChange} className="mt-4" label="Date of booking." />
 
         <div className="mt-4 flex">
           <InputText label="Adults" type="number" min="2" max="100" className="flex-1"
@@ -97,7 +95,7 @@ const CustomerDetails = () => {
         </div>}
 
         {getPayableNow() && <div className="mt-3 flex justify-between">
-          <p>Payable Now</p>
+          <p>{`Payable Now (20%)`}</p>
           <p>{`₹${numberWithCommas(getPayableNow())}`}</p>
         </div>}
       </div>
