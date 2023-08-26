@@ -33,7 +33,7 @@ const CustomerDetails = () => {
         <InputSelect label="Type of service." value={serviceType} onValueChange={onServiceTypeChange}
           placeholder="Select the type of service that you need." options={serviceTypeOptions} />
 
-        <InputDate value={bookingDate} required={true} fromDate={tomorrowFns} toDate={dateAfterTwoWeeks} disabled={disabledDates}
+        <InputDate value={bookingDate} fromDate={tomorrowFns} toDate={dateAfterTwoWeeks} disabled={disabledDates}
           onValueChange={onBookingDateChange} className="mt-4" label="Date of booking." />
       </div>
     </div>
