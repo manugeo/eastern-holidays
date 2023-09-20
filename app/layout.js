@@ -1,12 +1,12 @@
 import ThemeProvider from '@/components/theme-provider'
 import './globals.css'
-import { Inter, Crimson_Pro } from 'next/font/google'
+import { Inter, Roboto_Mono } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
-const crimsonPro = Crimson_Pro({
+const robotoMono = Roboto_Mono({
   subsets: ['latin'],
-  variable: '--font-crimson-pro'
-})
+  variable: '--font-roboto-mono'
+});
 
 export const metadata = {
   title: 'Create Next App',
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <main className={`flex min-h-screen bg-slate-950 ${crimsonPro.variable} font-crimson-pro`}>
+          <main className={`min-h-screen bg-slate-50 ${robotoMono.variable} font-roboto-mono`}>
             {children}
           </main>
         </ThemeProvider>

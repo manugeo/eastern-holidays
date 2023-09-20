@@ -17,7 +17,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'crimson-pro': ['var(--font-crimson-pro)']
+        'roboto-mono': ['var(--font-roboto-mono)']
       },
       keyframes: {
         "accordion-down": {
