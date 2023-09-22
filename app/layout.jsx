@@ -19,7 +19,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <main className={`min-h-screen bg-slate-50 ${robotoMono.variable} font-roboto-mono`}>
-            {children}
+            <div className='max-w-screen-sm mx-auto'>
+              {children}
+            </div>
           </main>
         </ThemeProvider>
       </body>
