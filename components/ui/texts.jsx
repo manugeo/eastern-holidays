@@ -30,7 +30,7 @@ export function TextH4({ className, children }) {
 }
 export function TextP({ className, children }) {
   return (
-    <p className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}>
+    <p className={cn("leading-7", className)}>
       {children}
     </p>
   )

@@ -1,11 +1,8 @@
-import Landing from "./_components/landing";
-import Services from "./_components/services";
+import Home from "@/components/pages/Home";
 
 export default function Page() {
   return (
-    <div className="max-w-screen-sm mx-auto h-full bg-gradient-to-br from-slate-900 to-sky-950 text-slate-50">
-      <Landing />
-      <Services />
-    </div>
+    <Home />
+    // <div className="max-w-screen-sm mx-auto h-full bg-slate-50"></div>
   )
 }
