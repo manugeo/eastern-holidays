@@ -1,7 +1,7 @@
 "use client"
 
-import ImageSplider from "../ImageSplider";
-import Usps from "../Usps";
+import ImageSplider from "../image-splider";
+import Usps from "../usps-component";
 import { TextH3, TextLarge, TextP } from "../ui/texts";
 
 const Home = () => {
