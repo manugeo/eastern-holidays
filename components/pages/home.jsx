@@ -2,7 +2,9 @@
 
 import ImageSplider from "../image-splider";
 import Usps from "../usps";
-import { TextH3, TextLarge, TextP } from "../ui/texts";
+import { TextH3, TextH4, TextLarge, TextMuted, TextP, TextSmall } from "../ui/texts";
+import Separator from "../ui/separator";
+import Itinary from "../itinary";
 
 const Home = () => {
 
@@ -15,18 +17,10 @@ const Home = () => {
         <TextLarge className="mt-3">Your Gateway to Houseboat Escapes in Alappuzha, Kerala</TextLarge>
         <TextP className="mt-1 text-sm">8 guests &#x2022; 3 bedrooms &#x2022; 2 bathrooms</TextP>
       </div>
-
+      <Separator className="mt-6 mx-6" />
       <Usps />
-
-      <div className="mt-6 mx-6 pt-6 border-t-[1px] border-slate-300">
-        <h2 className="text-xl font-semibold">{"What's your day like"}</h2>
-        <p className="mt-1 text-sm">
-          We offer two types of experiences: day cruises and overnight stays.
-        </p>
-        {/* <div className="mt-4 border-[1px] border-slate-300 rounded-lg pt-6 px-4">
-          <h3 className="text-lg font-semibold">Day Cruise</h3>
-        </div> */}
-      </div>
+      <Separator className="mt-6 mx-6" />
+      <Itinary className="mt-6 mx-6" />
     </div>
   );
 };

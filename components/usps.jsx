@@ -3,7 +3,7 @@ const { TextLarge, TextMuted } = require("./ui/texts");
 
 const Usps = () => {
   return (
-    <div className="mt-6 mx-6 pt-6 border-t-[1px] border-slate-300">
+    <div className="mt-6 mx-6">
       <div className="flex items-center">
         <Sailboat className="shrink-0" />
         <div className="ml-4">
