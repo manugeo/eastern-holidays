@@ -22,7 +22,7 @@ const Home = () => {
         <Itinary className="mt-6 mx-6" />
       </div>
       <div className="border-t-[1px] border-slate-300 py-4 px-6 text-center">
-        <Link href="/price" className={buttonVariants()}>See the Prices</Link>
+        <Link href="/prices" className={buttonVariants()}>See the Prices</Link>
       </div>
     </div>
   );
