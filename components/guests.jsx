@@ -44,9 +44,9 @@ const Guests = ({ className }) => {
           <TextMuted>Under 2</TextMuted>
         </div>
         <div className="basis-[120px] flex justify-between items-center">
-          <Button variant="outline" size="icon" disabled={(infants <= 0)} onClick={() => setChildren(infants - 1)}><Minus /></Button>
+          <Button variant="outline" size="icon" disabled={(infants <= 0)} onClick={() => setInfants(infants - 1)}><Minus /></Button>
           <TextSmall>{infants}</TextSmall>
-          <Button variant="outline" size="icon" disabled={(infants >= 6)} onClick={() => setChildren(infants + 1)}><Plus /></Button>
+          <Button variant="outline" size="icon" disabled={(infants >= 6)} onClick={() => setInfants(infants + 1)}><Plus /></Button>
         </div>
       </div>
     </div>
