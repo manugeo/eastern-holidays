@@ -57,6 +57,11 @@ export function TextSmall({ className, children }) {
     <small className={cn("text-sm font-medium leading-none", className)}>{children}</small>
   )
 }
+export function TextVerySmall({ className, children }) {
+  return (
+    <p className={cn("text-xs leading-none", className)}>{children}</p>
+  )
+}
 export function TextMuted({ className, children }) {
   return (
     <p className={cn("text-sm text-muted-foreground", className)}>{children}</p>
