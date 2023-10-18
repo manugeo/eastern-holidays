@@ -29,7 +29,7 @@ const VerifyNumber = ({ className, number = null, setNumber = () => { } }) => {
     <div className={className}>
       <TextH4>Verify your number to book</TextH4>
       <InputText className="mt-3" inputClassName="text-sm font-medium leading-none" label="Phone Number" id="phone-number" type="tel"
-        placeholder="Enter your 10-digit phone number" helperText="We'll text you to confirm your number. Only Indian numbers are supported for now."
+        placeholder="Enter your 10-digit phone number" helperText="We'll text you to confirm your number. Only Indian mobile numbers are supported for now."
         value={displayNumber} onChange={onChange} onFocus={onFocus} onBlur={onBlur} />
       <Button className="mt-4 w-full">Continue</Button>
     </div>
