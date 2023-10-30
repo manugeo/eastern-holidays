@@ -17,8 +17,6 @@ const Prices = () => {
   // Note: This number should not include country code.
   const [number, setNumber] = useState('');
 
-  console.log({ travelDate, guests });
-
   return (
     <div className="px-6 pb-6 flex flex-col">
       <Navbar className={'mt-4'} />
