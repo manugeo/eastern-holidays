@@ -5,10 +5,11 @@ import Separator from "../ui/separator";
 import Itinary from "../itinary";
 import { Button, buttonVariants } from "../ui/button";
 import Link from "next/link";
+import { ModeToggle } from "../mode-toggle";
 
 const Home = () => {
   return (
-    <div className="pb-6 flex flex-col">
+    <div className="pb-6 flex flex-col relative">
       <ImageSplider />
       <div className="mt-6 mx-6">
         <TextH3 className=''>Discover Eastern Holidays</TextH3>
@@ -22,6 +23,7 @@ const Home = () => {
       <div className="mt-6 mx-6 border-t-[1px] border-slate-300 pt-6">
         <Link href="/prices" className={`${buttonVariants()} w-full`}>See the Prices</Link>
       </div>
+      <ModeToggle className={'absolute right-6 top-6'} />
     </div>
   );
 };
