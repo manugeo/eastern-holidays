@@ -1,6 +1,6 @@
-import ThemeProvider from '@/components/theme-provider'
 import './globals.css'
 import { Inter, Roboto_Mono } from 'next/font/google'
+import { Providers } from './providers';
 
 const inter = Inter({ subsets: ['latin'] })
 const robotoMono = Roboto_Mono({
@@ -17,13 +17,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <main className={`min-h-screen bg-slate-50 ${robotoMono.variable} font-roboto-mono`}>
+        <Providers attribute="class" defaultTheme="system" enableSystem>
+          <main className={`min-h-screen bg-slate-50 ${robotoMono.variable} font-roboto-mono dark:bg-slate-900`}>
             <div className='max-w-screen-sm mx-auto'>
               {children}
             </div>
           </main>
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   )
