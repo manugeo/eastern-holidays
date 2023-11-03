@@ -3,7 +3,7 @@ import Usps from "../usps";
 import { TextH3, TextLarge, TextP } from "../ui/texts";
 import Separator from "../ui/separator";
 import Itinary from "../itinary";
-import { Button, buttonVariants } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 import Link from "next/link";
 import { ModeToggle } from "../mode-toggle";
 
