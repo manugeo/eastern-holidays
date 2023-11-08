@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Guests from "../guests";
 import Navbar from "../navbar";
 import PriceCalendar from "../price-calendar";
@@ -16,6 +16,17 @@ const Prices = () => {
   const [guests, setGuests] = useState(DEFAULT_GUESTS);
   // Note: This number should not include country code.
   const [number, setNumber] = useState('');
+
+  useEffect(() => {
+    // Note: Sample fetch operation to fetch rates from local backend server as part of developement.
+    const fetchRates = async () => {
+      const response = await fetch('http://localhost:3001/api/rates', { method: 'GET' });
+      const rates = await response.json();
+      console.log(rates);
+    }
+    fetchRates();
+  }, []);
+
 
   return (
     <div className="px-6 pb-6 flex flex-col">
