@@ -10,7 +10,6 @@ import { ModeToggle } from "../mode-toggle";
 const Home = () => {
   return (
     <div className="pb-6 flex flex-col relative">
-      <ImageSplider />
       <div className="mt-6 mx-6">
         <TextH3 className=''>Discover Eastern Holidays</TextH3>
         <TextLarge className="mt-3">Your Gateway to Houseboat Escapes in Alappuzha, Kerala</TextLarge>

@@ -1,5 +1,5 @@
-import Home from "@/components/pages/home";
+import TemporaryHome from "@/components/pages/temporaryHome";
 
 export default function Page() {
-  return <Home />;
+  return <TemporaryHome />;
 }
