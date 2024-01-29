@@ -10,7 +10,9 @@ const TemporaryHome = () => {
         <TextLarge className="mt-3">Exciting Things Are Coming!</TextLarge>
         <TextP className="mt-1 text-sm">Stay tuned for updates on our houseboat booking platform in Alappuzha, Kerala.</TextP>
       </div>
+
       <Separator className="mt-6 mx-6" />
+
       <ModeToggle />
     </div>
   );
